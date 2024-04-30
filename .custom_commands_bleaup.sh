@@ -1,14 +1,12 @@
 #!/bin/bash
 
 ### ZSHRC COMMANDS ###
-######################
-#update zshrc file
+# updates zshrc file
 function updt() {
   source ~/.zshrc  
 }
 
 ### ELIXIR COMMANDS ###
-#######################
 # runs the project
 function run() {
   iex -S mix phx.server
@@ -20,51 +18,50 @@ function mps_run() {
 }
 
 ### GIT COMMANDS ###
-
-# it calls git status
+# calls git status
 function gs() {
   git status
 }
 
-#it calls git add
+# calls git add
 function ga() {
   git add $1
 }
 
-#it calls git push
+# calls git push
 function gps() {
   git push
 }
 
-#it calls git commit -m 
+# calls git commit -m 
 function gct () {
   git commit -m $1
 }
 
-#it calls git add all and git commit  in one command
+# calls git add all and git commit  in one command
 function gac () {
     git add .
     git commit -m $1
 }
 
-#it calls git add all, git commit, and git push in one command
+# calls git add all, git commit, and git push in one command
 function gacps () {
     git add .
     git commit -m $1
     git push
 }
 
-# it calls git pull
+# calls git pull
 function gpl() {
   git pull
 }
 
-#it calls git diff
+# calls git diff
 function gd() {
   git diff
 }
 
-# it returns to main branch
+# checks out main branch
 function main() {
   git checkout main
 }
@@ -89,6 +86,7 @@ function pj_diff() {
   git log --pretty=format:"%Cgreen%<(135,trunc)%s%n%Cblue    >> %<(18,trunc)%an | %as, %Cred %h [%<(10,trunc)%(describe:tags=true)]%n" v0.1.$1..v0.1.$2
 }
 
+### PYTHON COMMANDS ###
 # runs given python script
 function py_run() {
   if [ $1 = "main" ]
