@@ -47,6 +47,13 @@ function gac () {
     git commit -m $1
 }
 
+#it calls git add all, git commit, and git push in one command
+function gacps () {
+    git add .
+    git commit -m $1
+    git push
+}
+
 # it calls git pull
 function gpl() {
   git pull
@@ -72,14 +79,17 @@ function gf() {
   git fetch
 }
 
+# calls "plain" diff from initial version to latest
 function diff() {
     git log --pretty=format:"%h - %an: %s" v0.1.$1..v0.1.$2
 }
 
+# calls "pj" diff from initial version to latest
 function pj_diff() {
   git log --pretty=format:"%Cgreen%<(135,trunc)%s%n%Cblue    >> %<(18,trunc)%an | %as, %Cred %h [%<(10,trunc)%(describe:tags=true)]%n" v0.1.$1..v0.1.$2
 }
 
+# runs given python script
 function py_run() {
   if [ $1 = "main" ]
   then
